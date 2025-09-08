@@ -2,17 +2,21 @@ package lab1;
 
 public class Multiples {
     public static void main(String[] args){
+        int count = multiples(100, 3, 5);
+        System.out.println(count);
+    }
+
+    protected static int multiples(int n, int a, int b) {
         int count = 0;
+        for(int i = 1; i < n; i++){
+            boolean multipleOfa = (i % a == 0);
+            boolean multipleOfb = (i % b == 0);
 
-        for(int i = 0; i < 1000; i++){
-            boolean multipleOf5 = (i % 5 == 0);
-            boolean multipleOf3 = (i % 3 == 0);
-
-            if (multipleOf5 || multipleOf3) {
+            if (multipleOfa || multipleOfb) {
                 count++;
             }
         }
-        System.out.println(count);
+        return count;
     }
 
 
